@@ -337,7 +337,7 @@ def file_based_convert_examples_to_features(
       segment_ids[:len(choice_segment_ids)] = np.array(choice_segment_ids)
 
       features[f'input_ids{i}'] = tf.train.Feature(
-        int64_list=tf.train.Int64List(value=list(input_ids.astype(np.int64))))
+            int64_list=tf.train.Int64List(value=list(input_ids.astype(np.int64))))
       features[f'input_mask{i}'] = tf.train.Feature(
         int64_list=tf.train.Int64List(value=list(input_mask.astype(np.int64))))
       features[f'segment_ids{i}'] = tf.train.Feature(
